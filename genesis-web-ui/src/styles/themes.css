@@ -1,0 +1,245 @@
+/* Genesis Web UI - Theme System */
+
+/* ==================== InfiniteTalk Theme (紫色渐变) ==================== */
+.theme-infinite-talk {
+  --primary-color: #6366f1;
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --primary-hover: #5558e3;
+  --tab-active-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --tab-active-text: #ffffff;
+  --tab-inactive-text: #64748b;
+  --border-radius: 12px;
+  --shadow-color: rgba(102, 126, 234, 0.3);
+}
+
+/* ==================== WanAnimate Theme (清新蓝绿) ==================== */
+.theme-wan-animate {
+  --primary-color: #06b6d4;
+  --primary-gradient: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+  --primary-hover: #0891b2;
+  --tab-active-bg: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+  --tab-active-text: #ffffff;
+  --tab-inactive-text: #64748b;
+  --border-radius: 12px;
+  --shadow-color: rgba(6, 182, 212, 0.3);
+}
+
+/* ==================== Standard I2V Theme (经典灰) ==================== */
+.theme-standard {
+  --primary-color: #64748b;
+  --primary-gradient: linear-gradient(135deg, #64748b 0%, #475569 100%);
+  --primary-hover: #475569;
+  --tab-active-bg: #64748b;
+  --tab-active-text: #ffffff;
+  --tab-inactive-text: #94a3b8;
+  --border-radius: 8px;
+  --shadow-color: rgba(100, 116, 139, 0.2);
+}
+
+/* ==================== Cyberpunk Theme (赛博朋克) ==================== */
+.theme-cyberpunk {
+  --primary-color: #ff0080;
+  --primary-gradient: linear-gradient(135deg, #ff0080 0%, #7928ca 100%);
+  --primary-hover: #e0006e;
+  --tab-active-bg: linear-gradient(135deg, #ff0080 0%, #7928ca 100%);
+  --tab-active-text: #ffffff;
+  --tab-inactive-text: #a855f7;
+  --border-radius: 4px;
+  --shadow-color: rgba(255, 0, 128, 0.4);
+  --glow-effect: 0 0 20px rgba(255, 0, 128, 0.5);
+}
+
+/* ==================== Sunset Theme (日落橙) ==================== */
+.theme-sunset {
+  --primary-color: #f59e0b;
+  --primary-gradient: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+  --primary-hover: #d97706;
+  --tab-active-bg: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+  --tab-active-text: #ffffff;
+  --tab-inactive-text: #78716c;
+  --border-radius: 16px;
+  --shadow-color: rgba(245, 158, 11, 0.3);
+}
+
+/* ==================== Forest Theme (森林绿) ==================== */
+.theme-forest {
+  --primary-color: #10b981;
+  --primary-gradient: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  --primary-hover: #059669;
+  --tab-active-bg: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  --tab-active-text: #ffffff;
+  --tab-inactive-text: #6b7280;
+  --border-radius: 10px;
+  --shadow-color: rgba(16, 185, 129, 0.3);
+}
+
+/* ==================== Tab Styles ==================== */
+.theme-tabs {
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: #f8fafc;
+  border-radius: var(--border-radius);
+  margin-bottom: 24px;
+}
+
+.theme-tab {
+  padding: 10px 24px;
+  border: none;
+  background: transparent;
+  color: var(--tab-inactive-text);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: calc(var(--border-radius) - 4px);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-tab:hover {
+  color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+.theme-tab.active {
+  background: var(--tab-active-bg);
+  color: var(--tab-active-text);
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+/* Cyberpunk theme special effects */
+.theme-cyberpunk .theme-tab.active {
+  box-shadow: var(--glow-effect);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: var(--glow-effect);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 0, 128, 0.7);
+  }
+}
+
+/* ==================== Button Styles ==================== */
+.theme-button {
+  background: var(--primary-gradient);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: var(--border-radius);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.theme-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px var(--shadow-color);
+}
+
+.theme-button:active {
+  transform: translateY(0);
+}
+
+/* ==================== Card Styles ==================== */
+.theme-card {
+  background: white;
+  border-radius: var(--border-radius);
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.theme-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+/* ==================== Progress Bar ==================== */
+.theme-progress {
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.theme-progress-bar {
+  height: 100%;
+  background: var(--primary-gradient);
+  transition: width 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* ==================== Input Styles ==================== */
+.theme-input {
+  border: 2px solid #e2e8f0;
+  border-radius: var(--border-radius);
+  padding: 12px 16px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.theme-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px var(--shadow-color);
+}
+
+/* ==================== Badge Styles ==================== */
+.theme-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background: var(--primary-gradient);
+  color: white;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ==================== Dark Mode Support ==================== */
+@media (prefers-color-scheme: dark) {
+  .theme-tabs {
+    background: #1e293b;
+  }
+  
+  .theme-card {
+    background: #1e293b;
+    color: #e2e8f0;
+  }
+  
+  .theme-input {
+    background: #0f172a;
+    border-color: #334155;
+    color: #e2e8f0;
+  }
+}
